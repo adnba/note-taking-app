@@ -56,6 +56,8 @@ Built with **Express.js**, **MySQL**, **Redis**, and **Docker**.
    docker-compose up --build
    ```
    The API will run at `http://localhost:3000`.
+   ### Note:
+   There is a 10 second delay set for the database (MySQL) init.
 
 ---
 
