@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    command: npm start
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+      - redis
+  mysql:
+    image: "mysql:8.0.36"
+    restart: always
+    ports:
+    - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: notes_db
+    volumes:
+    - mysql_data:/var/lib/mysql
+  redis:
+    image: redis
+
+volumes:
+  mysql_data:
