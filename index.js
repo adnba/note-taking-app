@@ -1,19 +1,21 @@
 const express = require('express')
 const cors = require('cors')
 
-const sequelize = require('./utils/database')
-
 require('dotenv').config()
+
+const sequelize = require('./utils/database')
 
 const auth = require('./routes/auth')
 const notes = require('./routes/notes')
 
 const app = express()
 
-sequelize
-  .sync({ alter: true })
-  .then(() => console.log('Connected to Database'))
-  .catch(error => console.log('Error connecting to Database', error))
+setTimeout(() => {
+  sequelize
+    .sync({ alter: true })
+    .then(() => console.log('Connected to Database'))
+    .catch(error => console.log('Error connecting to Database', error))
+}, 10000)
 
 app.use(express.json())
 app.use(cors())
