@@ -126,6 +126,10 @@ Postman contains all the requests with the appropriate path params, request body
 
 ---
 
+## Technical Analysis
+
+- [Technical Analysis page](./technical_analysis.md)
+
 ## Notes
 
 - **Attachments**: Uploaded files are stored locally in `./uploads`.
